@@ -64,6 +64,7 @@ class ScrapMotorControl {
 		void setControl(float newSpeed); // set direction + speed
 		void setControlEnc(int encPerSec) { setControl(convertToSpeed(encPerSec)); };
 		void setSpeed(float newSpeed); // set direction only
+		void setSpeedEnc(int encPerSec) { setSpeed(convertToSpeed(encPerSec)); };
 		void setMinSpeed(float newMin) { minSpeed = newMin; };
 		void setMaxSpeed(float newMax) { maxSpeed = newMax; };
 		void incrementSpeed(int speedEncDiff);
