@@ -1,7 +1,7 @@
 #ifndef SCRAPCONTROLLER_H
 #define SCRAPCONTROLLER_H
 #include "Arduino.h"
-#include "ScrapDefinitions.h
+#include "ScrapDefinitions.h"
 
 
 // classes
@@ -52,7 +52,7 @@ class ScrapMotorControl {
 		float prevSpeed = 0.0;
 		float speedGoal = 0.0;
 		long prevCount = 0;
-		int minPower = 50;
+		int minPower = SCRAPMOTORCONTROL_MINPOWER;
 		float minSpeed;
 		float maxSpeed;
 		ScrapMotor* motor;
@@ -104,11 +104,11 @@ class ScrapSwitch {
 class ScrapController {
 	private:
 		int goal1;
-		int encTolerance = 5; // +/- range around goal
-		int slowdownThresh = 200; // slow down range
-		int minSlowPower = 120; // minimum power
-		int minEncSpeed = 200;
-		int maxEncSpeed = 1000;
+		int encTolerance = SCRAPCONTROLLER_ENCTOLERANCE; // +/- range around goal
+		int slowdownThresh = SCRAPCONTROLLER_SLOWDOWNTHRESH; // slow down range
+		int minSlowPower = SCRAPCONTROLLER_MINSLOWPOWER; // minimum power
+		int minEncSpeed = SCRAPCONTROLLER_MINENCSPEED;
+		int maxEncSpeed = SCRAPCONTROLLER_MAXENCSPEED;
 		ScrapMotor* motor1;
 		ScrapEncoder* encoder1;
 		ScrapSwitch* switch1;
@@ -142,15 +142,15 @@ class ScrapDualController {
 	private:
 		long goal1;
 		long goal2;
-		int diffTolerance = 40; //max diff in encoder values
-		int encTolerance = 5; // max window of error from set goal
-		int slowdownThresh1 = 500; // slow down range
-		int slowdownThresh2 = 500; // slow down range
-		int minSlowPower1 = 65; // minimum power of motor1
-		int minSlowPower2 = 65; // minimum power of motor2
-		int minEncSpeed = 200;
-		int maxEncSpeed = 1400;
-		int encSpeedBalance = 10;
+		int diffTolerance = SCRAPDUALCONTROLLER_DIFFTOLERANCE; //max diff in encoder values
+		int encTolerance = SCRAPDUALCONTROLLER_ENCTOLERANCE; // max window of error from set goal
+		int slowdownThresh1 = SCRAPDUALCONTROLLER_SLOWDOWNTHRESH1; // slow down range
+		int slowdownThresh2 = SCRAPDUALCONTROLLER_SLOWDOWNTHRESH2; // slow down range
+		int minSlowPower1 = SCRAPDUALCONTROLLER_MINSLOWPOWER1; // minimum power of motor1
+		int minSlowPower2 = SCRAPDUALCONTROLLER_MINSLOWPOWER2; // minimum power of motor2
+		int minEncSpeed = SCRAPDUALCONTROLLER_MINENCSPEED;
+		int maxEncSpeed = SCRAPDUALCONTROLLER_MAXENCSPEED;
+		int encSpeedBalance = SCRAPDUALCONTROLLER_ENCSPEEDBALANCE;
 		ScrapMotor* motor1;
 		ScrapMotor* motor2;
 		ScrapEncoder* encoder1;

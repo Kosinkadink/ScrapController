@@ -16,7 +16,7 @@ float ScrapMotorControl::getSpeed() {
 float ScrapMotorControl::calcSpeed() {
 	// get some values for calculation
 	unsigned long newTime = micros();
-	int newCount = encoder->getCount();
+	long newCount = encoder->getCount();
 	float currSpeed = 0;
 	// check if prevTime exists
 	if (prevTime == 0)
