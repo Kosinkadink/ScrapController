@@ -148,6 +148,8 @@ class ScrapMotorControl {
 		// get previous speed and speed goal
 		float getSpeed() { return prevSpeed; };
 		float getSpeedGoal() { return speedGoal; }; // return speed goal
+		// get motor control goal
+		float getControl() { return getSpeedGoal()*getDirection(); };
 		// get time of previous reading
 		unsigned long getTime();
 		// perform movement, incrementing speed/power/time
